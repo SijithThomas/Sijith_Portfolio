@@ -235,6 +235,11 @@ header {
   color: #fff;
 }
 
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 .text-secondary {
   color: #eece1a;
 }
@@ -309,6 +314,7 @@ main#home h1 {
   width: 200px;
   height: 200px;
   margin: auto;
+  margin-top: 2rem;
   border-radius: 50%;
   border: 3px solid #eece1a;
 }

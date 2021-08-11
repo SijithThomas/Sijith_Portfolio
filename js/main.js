@@ -32,26 +32,8 @@ function toggleMenu(){
 }
 
 // ==============Typing Effect=============//
-// const texts=['Front-End Developer','UI&Ux Designer'];
-// let count=0;
-// let index=0;
-// let currentText="";
-// let letter= "";
-// (function type(){
-//     if(count === texts.length){
-//         count=0;
-//     }
-//     currentText=texts[count];
-//     letter=currentText.slice(0, ++index);
-//     document.querySelector('.type').innerHTML=letter;
-//     if(letter.length === currentText.length){
-//         count++;
-//         index=0;
-//     }
-//     setTimeout(type, 200);
-// }());
 const textToDisplay=document.querySelector('.type')
-const texts=['Front-End Developer ','UI&Ux Designer '];
+const texts=['Front-End Developer ','UI/Ux Designer '];
 let i=0;
 let j=0;
 let currentText=[];
