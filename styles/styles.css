@@ -210,7 +210,6 @@ h2.sm-heading,
 h3.sm-heading {
   margin-bottom: 2rem;
   padding: 0.2rem 1rem;
-  background: rgba(73, 73, 73, 0.5);
 }
 
 a {
@@ -257,6 +256,25 @@ main a:hover {
   color: #eece1a;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+}
+
+main .sm-heading {
+  display: inline;
+  padding: 0;
+}
+
+main .type {
+  color: #eece1a;
+  position: relative;
+}
+
+main .type::after {
+  content: "";
+  width: 1px;
+  top: 3px;
+  height: 100%;
+  position: absolute;
+  background-color: #eece1a;
 }
 
 main#home {
@@ -324,10 +342,38 @@ main#home h1 {
 
 #about .about-info .skill .icon .skills__name {
   margin-right: 1rem;
+  position: relative;
+}
+
+#about .about-info .skill .icon .skills__name:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -55px;
+  left: 0;
+  min-width: 150px;
+  text-align: center;
+  height: 30px;
+  background-color: #eece1a;
+  border-radius: 4px;
+  color: black;
+  padding-top: 5px;
+}
+
+#about .about-info .skill .icon .skills__name:hover::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 25%;
+  margin-left: 0px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #eece1a transparent transparent transparent;
 }
 
 #about .about-info .skill .icon .skills_img {
+  position: relative;
   fill: #fff;
+  cursor: pointer;
 }
 
 #about .about-info .skill .icon .skills_img:hover {
