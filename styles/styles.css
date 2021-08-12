@@ -38,8 +38,9 @@
 
 .menu {
   visibility: hidden;
-  position: fixed;
+  position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   overflow: hidden;
   display: -webkit-box;
@@ -218,7 +219,7 @@ a {
 }
 
 header {
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 2;
 }
@@ -238,6 +239,7 @@ header {
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .text-secondary {
@@ -415,6 +417,165 @@ main#home h1 {
   padding-right: 5px;
 }
 
+.contact-box {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 3rem;
+      grid-template-areas: "map-box form-box form-box";
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  border-radius: 15px;
+}
+
+.contact-box .map-box {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: map-box;
+  position: relative;
+  background: url(../asstes/img/google_map.PNG) no-repeat center;
+  z-index: 1;
+}
+
+.contact-box .map-box .map-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.86);
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-box .map-box .map-overlay .phone_mail .cont-span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-box .map-box .map-overlay .phone_mail i {
+  width: 3rem;
+  font-size: 1.2rem;
+  display: inline;
+}
+
+.contact-box .map-box .map-overlay .cont-icons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 2rem;
+          column-gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.contact-box .map-box .map-overlay .cont-icons i {
+  font-size: 1.2rem;
+}
+
+.contact-box .form-box {
+  padding: 2rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: form-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: #ffffff;
+  color: #858585;
+}
+
+.contact-box .form-box .input-data {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1rem;
+  text-align: start;
+}
+
+.contact-box .form-box .input-data label {
+  color: #858585;
+  font-size: 14px;
+}
+
+.contact-box .form-box .input-data input[type=text], .contact-box .form-box .input-data input[type=email] {
+  font-size: 1rem;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #cecece;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.contact-box .form-box .input-data input[type=text]:focus, .contact-box .form-box .input-data input[type=email]:focus {
+  outline: none;
+  border-bottom: 1px solid #27e5f3;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.contact-box .form-box .input-data textarea {
+  border: none;
+  font-size: 14px;
+  margin-top: 1rem;
+  border-bottom: 1px solid #cecece;
+  resize: none;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.contact-box .form-box .input-data textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #27e5f3;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.contact-box .form-box .input-data input[type=button] {
+  background-color: #292929;
+  color: #fff;
+  padding: 10px;
+  border: 2px solid #292929;
+  cursor: pointer;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.contact-box .form-box .input-data input[type=button]:hover {
+  background-color: #fff;
+  color: #292929;
+  border: 2px solid #292929;
+  font-weight: 600;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
 .projects .btn-dark {
   background-color: black;
   color: #fff;
@@ -498,6 +659,11 @@ main#home h1 {
   .projects {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-box {
+        grid-template-areas: "map-box"  "form-box";
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
