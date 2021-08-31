@@ -151,6 +151,7 @@ main {
             border-radius: 4px;
             color: black;
             padding-top: 5px;
+            @include ease-out();
           }
           &:hover::before {
             content: "";
@@ -161,6 +162,7 @@ main {
             border-width: 8px;
             border-style: solid;
             border-color: $secondary-color transparent transparent transparent;
+            @include ease-out();
           }
         }
         .skills_img {
