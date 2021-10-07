@@ -33,7 +33,7 @@ function toggleMenu(){
 
 // ==============Typing Effect=============//
 const textToDisplay=document.querySelector('.type')
-const texts=['Front-End Developer ','UI/Ux Designer '];
+const texts=['Front-End Developer ','UI/UX Designer '];
 let i=0;
 let j=0;
 let currentText=[];
